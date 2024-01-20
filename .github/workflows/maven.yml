@@ -95,5 +95,7 @@ jobs:
         run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }}
       - name: Azure ACR login
         run: az acr login --name ${{ secrets.ACR_NAME }}
-      - name: Azure ACR Image Push
-        run: docker push mrneedhelp/adv6_ros_connect:latest
+      - name: Retag image
+        run: docker tag mrneedhelp/adv6_ros_connect:latest ${{ secrets.ACR_NAME }}.azurecr.io/adv6_ros_connect:latest
+      - name: docker acr push?
+        run: docker push ${{ secrets.ACR_NAME }}.azurecr.io/adv6_ros_connect:latest
