@@ -1,0 +1,59 @@
+{
+  "groups": [
+    {
+      "name": "connect",
+      "type": "com.ros.connect.config.rabbitQueue.RosConectQueue",
+      "sourceType": "com.ros.connect.config.rabbitQueue.RosConectQueue"
+    },
+    {
+      "name": "ros",
+      "type": "com.ros.connect.config.rabbitQueue.RosConfigQueue",
+      "sourceType": "com.ros.connect.config.rabbitQueue.RosConfigQueue"
+    }
+  ],
+  "properties": [
+    {
+      "name": "connect.host",
+      "type": "java.lang.String",
+      "sourceType": "com.ros.connect.config.rabbitQueue.RosConectQueue"
+    },
+    {
+      "name": "connect.password",
+      "type": "java.lang.String",
+      "sourceType": "com.ros.connect.config.rabbitQueue.RosConectQueue"
+    },
+    {
+      "name": "connect.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.ros.connect.config.rabbitQueue.RosConectQueue",
+      "defaultValue": 0
+    },
+    {
+      "name": "connect.username",
+      "type": "java.lang.String",
+      "sourceType": "com.ros.connect.config.rabbitQueue.RosConectQueue"
+    },
+    {
+      "name": "ros.host",
+      "type": "java.lang.String",
+      "sourceType": "com.ros.connect.config.rabbitQueue.RosConfigQueue"
+    },
+    {
+      "name": "ros.password",
+      "type": "java.lang.String",
+      "sourceType": "com.ros.connect.config.rabbitQueue.RosConfigQueue"
+    },
+    {
+      "name": "ros.port",
+      "type": "java.lang.Integer",
+      "sourceType": "com.ros.connect.config.rabbitQueue.RosConfigQueue",
+      "defaultValue": 0
+    },
+    {
+      "name": "ros.username",
+      "type": "java.lang.String",
+      "sourceType": "com.ros.connect.config.rabbitQueue.RosConfigQueue"
+    }
+  ],
+  "hints": []
+}

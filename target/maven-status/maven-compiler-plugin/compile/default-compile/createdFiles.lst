@@ -1,0 +1,11 @@
+com\ros\connect\config\RabbitMQConfig.class
+com\ros\connect\controller\Controller.class
+com\ros\connect\service\Receiver.class
+com\ros\connect\ConnectApplication.class
+com\ros\connect\service\testsend.class
+META-INF\spring-configuration-metadata.json
+com\ros\connect\DTO\RecievedMessage.class
+com\ros\connect\config\rabbitQueue\RosConectQueue.class
+com\ros\connect\DTO\ProcessingDTO.class
+com\ros\connect\service\Connection.class
+com\ros\connect\config\rabbitQueue\RosConfigQueue.class
