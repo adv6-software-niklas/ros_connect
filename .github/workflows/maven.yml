@@ -98,4 +98,4 @@ jobs:
       - name: Retag image
         run: docker tag mrneedhelp/adv6_ros_connect:latest ${{ secrets.ACR_NAME }}.azurecr.io/adv6_ros_connect:latest
       - name: docker acr push?
-        run: docker push ${{ secrets.ACR_NAME }}.azurecr.io/adv6_ros_connect:latest
+        run: docker login --name ${{ secrets.ACR_NAME }} && docker push ${{ secrets.ACR_NAME }}.azurecr.io/adv6_ros_connect:latest
