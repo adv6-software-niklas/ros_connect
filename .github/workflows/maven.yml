@@ -88,5 +88,5 @@ on:
         - name: Docker Setup Buildx
           uses: docker/setup-buildx-action@v3.0.0
         - name: Build Docker image
-          run: docker build build/ -t mrneedhelp/adv6_ros_connect:lat
+          run: docker build build/ -t mrneedhelp/adv6_ros_connect:latest
   
