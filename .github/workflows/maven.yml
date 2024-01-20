@@ -97,9 +97,9 @@ jobs:
         run: docker tag mrneedhelp/adv6_ros_connect:latest ${{ secrets.ACR_NAME }}.azurecr.io/adv6_ros_connect:latest
       - name: Logout docker hub
         run: docker logout 
-      - name: Azure ACR login
-        run: az acr login --name ${{ secrets.ACR_NAME }}
-    #   - name: docker acr login
-    #     run: echo "${{ secrets.AZURE_PASSWORD }}" | docker login ${{ secrets.ACR_NAME }} -u "${{ secrets.AZURE_USERNAME }}" --password-stdin
+    #   - name: Azure ACR login
+    #     run: az acr login --name ${{ secrets.ACR_NAME }}
+      - name: docker acr login
+        run: echo "${{ secrets.AZURE_LOGIN_SERVER }}" | docker login ${{ secrets.ACR_NAME }} -u "${{ secrets.AZURE_USERNAME }}" --password-stdin
       - name: docker acr push
-        run: az acr login --name ${{ secrets.ACR_NAME }} && docker push ${{ secrets.ACR_NAME }}.azurecr.io/adv6_ros_connect:latest
+        run: docker push ${{ secrets.ACR_NAME }}.azurecr.io/adv6_ros_connect:latest
