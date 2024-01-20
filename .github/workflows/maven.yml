@@ -83,8 +83,8 @@ jobs:
           path: build
       - name: Unzip artifact
         run: zip -r Build.zip build/
-      - name: DockerHub Login
-        run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
+    #   - name: DockerHub Login
+    #     run: docker login --username ${{ secrets.DOCKER_USERNAME }} --password ${{ secrets.DOCKER_PASSWORD }}
       - name: Docker Setup Buildx
         uses: docker/setup-buildx-action@v3.0.0
       - name: Build Docker image
