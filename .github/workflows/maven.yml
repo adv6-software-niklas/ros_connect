@@ -92,4 +92,4 @@ jobs:
       - name: Push image to registry
         run: docker push mrneedhelp/adv6_ros_connect:latest
       - name: Azure login
-        run: az login -- ${{ secrets.AZURE_USERSNAME }} --password ${{ secrets.AZURE_PASSWORD }}
+        run: az login --username ${{ secrets.AZURE_USERSNAME }} --password ${{ secrets.AZURE_PASSWORD }}
