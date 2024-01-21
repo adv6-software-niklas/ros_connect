@@ -112,9 +112,9 @@ jobs:
           path: build
       - name: Unzip artifact
         run: zip -r Build.zip build/
-      - name: Azure login
-        run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }}
+      # - name: Azure login
+      #   run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }}
       - name: Get AKS context
-        run: az aks get-credentials --resource-group RGR-GripOpGeluid --name adv6nikindividual
+        run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }} && az aks get-credentials --resource-group RGR-GripOpGeluid --name adv6nikindividual
       - name: Deploy to AKS
         run: kubectl apply -f build/deployment.yaml
