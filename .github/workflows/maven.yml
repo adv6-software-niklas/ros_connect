@@ -116,5 +116,7 @@ jobs:
       #   run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }}
       - name: Get AKS context
         run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }} && az aks get-credentials --resource-group RGR-GripOpGeluid --name adv6nikindividual --admin
+      - name: svp
+        run: az ad sp create-for-rbac --name RGR-GripOpGeluid --scopes /subscriptions/4cf6ab57-baff-488b-be24-e8a961364804/resourceGroupsRGR-GripOpGeluid/providers/Microsoft.ContainerRegistry/registries/adv6nikindividual --role acrpush
       - name: Deploy to AKS
         run: kubectl apply -f build/deployment.yaml
