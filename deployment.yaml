@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ros-connect-backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ros-connect
+  template:
+    metadata:
+      labels:
+        app: ros-connect
+    spec:
+      containers:
+        - name: ros-connect-backend
+          image: mrneedhelp/adv6_ros_connect:latest
+          ports:
+            - containerPort: 8080
+            - containerPort: 9090
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ros-connect-service
+spec:
+  selector:
+    app: ros-connect # Common label used in both deployments
+  ports:
+    - name: http-port
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: grpc-port
+      protocol: TCP
+      port: 9090
+      targetPort: 9090
+  type: LoadBalancer
