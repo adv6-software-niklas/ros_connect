@@ -115,6 +115,6 @@ jobs:
       # - name: Azure login
       #   run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }}
       - name: Get AKS context
-        run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }} --admin && az aks get-credentials --resource-group RGR-GripOpGeluid --name adv6nikindividual
+        run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }} && az aks get-credentials --resource-group RGR-GripOpGeluid --name adv6nikindividual --admin
       - name: Deploy to AKS
         run: kubectl apply -f build/deployment.yaml
