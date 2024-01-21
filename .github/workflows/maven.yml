@@ -114,9 +114,9 @@ jobs:
         run: zip -r Build.zip build/
       # - name: Azure login
       #   run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }}
-      - name: svp
-        run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }} && az ad sp create-for-rbac --name RGR-GripOpGeluid --scopes /subscriptions/4cf6ab57-baff-488b-be24-e8a961364804/resourceGroupsRGR-GripOpGeluid/providers/Microsoft.ContainerRegistry/registries/adv6nikindividual --role acrpush
+      - name: azure login && Set cluster subscriptio
+        run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }} && az account set --subscription 4cf6ab57-baff-488b-be24-e8a961364804 
       - name: Get AKS context
-        run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }} && az aks get-credentials --resource-group RGR-GripOpGeluid --name adv6nikindividual --admin
+        run: az aks get-credentials --resource-group RGR-GripOpGeluid --name adv6nikindividual --overwrite-existing
       - name: Deploy to AKS
         run: kubectl apply -f build/deployment.yaml
