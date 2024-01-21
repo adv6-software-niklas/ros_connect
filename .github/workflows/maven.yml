@@ -75,7 +75,7 @@ jobs:
 
   Staging:
     runs-on: ubuntu-latest
-    needs: Build
+    needs: [Staging, SonarCloud]
     steps:
       - name: Get artifact
         uses: actions/download-artifact@v3
