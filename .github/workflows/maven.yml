@@ -89,8 +89,8 @@ jobs:
         uses: docker/setup-buildx-action@v3.0.0
       - name: Build Docker image
         run: docker build build/ -t mrneedhelp/adv6_ros_connect:latest
-      - name: Push image to registry
-        run: docker push mrneedhelp/adv6_ros_connect:latest
+    #   - name: Push image to registry
+    #     run: docker push mrneedhelp/adv6_ros_connect:latest
       - name: Azure login
         run: az login --username ${{ secrets.AZURE_USERNAME }} --password ${{ secrets.AZURE_PASSWORD }}
       - name: Retag image
