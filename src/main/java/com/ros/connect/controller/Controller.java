@@ -10,6 +10,7 @@ import com.ros.connect.service.Receiver;
 import com.ros.connect.service.testsend;
 
 @RestController
+@RequestMapping("connect")
 public class Controller {
 
     private final Connection _conn;

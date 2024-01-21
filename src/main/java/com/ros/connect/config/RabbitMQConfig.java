@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class RabbitMQConfig {
 
     // @Value("${spring.rabbitmq.host}")
-    private String rabbitmqHost = "172.69.0.12";
+    private String rabbitmqHost = "rabbitmq-service";
 
     // @Value("${spring.rabbitmq.port}")
     private int rabbitmqPort = 5672;

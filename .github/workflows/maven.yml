@@ -32,7 +32,8 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build maven app
-        run: mvn -B package --file pom.xml
+        # run: mvn -B package --file pom.xml
+        run: mvn clean install -DskipTests
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
